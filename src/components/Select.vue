@@ -333,6 +333,7 @@
                 @keydown.enter.prevent="typeAheadSelect"
                 @keydown.tab="onTab"
                 @blur="onSearchBlur"
+                @paste="onPaste"
                 @focus="onSearchFocus"
                 type="search"
                 class="form-control"
@@ -578,6 +579,17 @@
         type: Function,
         default: function (val) {
           this.$emit('change', val);
+        }
+      },
+      
+      /**
+       * Optional callback that is fired when something is pasted
+       * @type {Function}
+       */
+      onPaste: {
+        type: Function,
+        default: function (val) {
+          // do nothing
         }
       },
 
